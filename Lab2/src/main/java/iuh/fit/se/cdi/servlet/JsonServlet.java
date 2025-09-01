@@ -1,4 +1,4 @@
-package iuh.fit.se.cdi.model.servlet;
+package iuh.fit.se.cdi.servlet;
 
 import com.google.gson.Gson;
 import iuh.fit.se.cdi.model.User;
@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/api/user")
+@WebServlet("/testapi/user")
 public class JsonServlet extends HttpServlet {
 
     @Override
