@@ -55,7 +55,6 @@ public class FileUploadServlet extends HttpServlet {
 
             String fileName = filePart.getSubmittedFileName();
 
-            // Save the file to the server (using Files.copy)
             InputStream inputStream = filePart.getInputStream();
             Files.copy(inputStream, Paths.get(uploadToSource + File.separator + fileName),
                     StandardCopyOption.REPLACE_EXISTING);
