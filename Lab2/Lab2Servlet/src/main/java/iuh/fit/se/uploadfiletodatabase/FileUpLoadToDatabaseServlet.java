@@ -27,7 +27,7 @@ public class FileUpLoadToDatabaseServlet extends HttpServlet {
             userDir = new File(userDir).getParent();
             userDir = new File(userDir).getParent();
         }
-        uploadPathToSource = "D:\\HK1_2025-2026\\Java_WWW\\ExerciseLab\\Lab2\\src\\main\\webapp\\uploads";
+        uploadPathToSource = "D:\\HK1_2025-2026\\Java_WWW\\ExerciseLab\\Lab2\\Lab2Servlet\\src\\main\\webapp";
     }
 
     @Override
