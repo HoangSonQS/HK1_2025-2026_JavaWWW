@@ -17,24 +17,19 @@ import java.util.List;
 public class UserListServlet extends HttpServlet {
 
     private UserService userService = new UserService();
-    private List<User> userList = new ArrayList<>();
-
-    @Override
-    public void init(ServletConfig config) throws ServletException {
-        super.init(config);
-        try {
-            // Tải dữ liệu từ database một lần duy nhất khi Servlet khởi tạo
-            userList = userService.getAllUsers();
-        } catch (SQLException e) {
-            e.printStackTrace();
-            System.err.println("Lỗi khi tải dữ liệu từ database khi khởi tạo Servlet.");
-        }
-    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // Sử dụng danh sách đã được tải sẵn
-        req.setAttribute("userList", userList);
-        req.getRequestDispatcher("/userList.jsp").forward(req, resp);
+        try {
+            List<User> userList = userService.getAllUsers();
+
+            req.setAttribute("userList", userList);
+
+            req.getRequestDispatcher("/userList.jsp").forward(req, resp);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            req.setAttribute("error", "Lỗi khi tải dữ liệu từ cơ sở dữ liệu: " + e.getMessage());
+            req.getRequestDispatcher("/error.jsp").forward(req, resp);
+        }
     }
 }

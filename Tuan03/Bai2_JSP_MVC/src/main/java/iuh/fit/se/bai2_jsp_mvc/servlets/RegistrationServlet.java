@@ -44,6 +44,7 @@ public class RegistrationServlet extends HttpServlet {
         try {
             userService.addUser(newUser);
             List<User> userList = userService.getAllUsers();
+            System.out.println(userList);
             req.setAttribute("userList", userList);
             req.getRequestDispatcher("/userList.jsp").forward(req, resp);
         } catch (SQLException e) {
