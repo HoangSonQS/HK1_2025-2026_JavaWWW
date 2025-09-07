@@ -4,12 +4,11 @@ package iuh.fit.se.lab2_restapi.jakartarestapi.api;
 import iuh.fit.se.lab2_restapi.jakartarestapi.model.User;
 import iuh.fit.se.lab2_restapi.jakartarestapi.service.UserService;
 import jakarta.ws.rs.*;
-import jakarta.ws.rs.core.MediaType;
-import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.core.*;
 
 import java.sql.SQLException;
-
 import java.util.List;
+
 
 @Path("/users")
 public class UserResource {
