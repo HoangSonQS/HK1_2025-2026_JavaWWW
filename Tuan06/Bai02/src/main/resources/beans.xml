@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="addressSetter" class="models.Address">
+        <property name="city" value="Ho Chi Minh"/>
+        <property name="state" value="VN-SGN"/>
+        <property name="country" value="Vietnam"/>
+    </bean>
+
+    <bean id="employeeSetter" class="models.Employee">
+        <property name="id" value="101"/>
+        <property name="name" value="Nguyen Van Teo (Setter)"/>
+        <property name="address" ref="addressSetter"/>
+    </bean>
+
+    <bean id="addressConstructor" class="models.Address">
+        <constructor-arg value="Hanoi"/>
+        <constructor-arg value="VN-HAN"/>
+        <constructor-arg value="Vietnam"/>
+    </bean>
+
+    <bean id="employeeConstructor" class="models.Employee">
+        <constructor-arg value="102"/>
+        <constructor-arg value="Tran Thi Ty (Constructor)"/>
+        <constructor-arg ref="addressConstructor"/>
+    </bean>
+
+</beans>

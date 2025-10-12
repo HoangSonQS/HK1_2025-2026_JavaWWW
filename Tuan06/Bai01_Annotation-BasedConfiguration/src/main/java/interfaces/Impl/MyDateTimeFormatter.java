@@ -1,14 +1,12 @@
 package interfaces.Impl;
 
 import interfaces.MyFormatter;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
-@Primary
-public class MyNumberFormatter implements MyFormatter {
+public class MyDateTimeFormatter implements MyFormatter {
     @Override
     public String format(double number) {
-        return "Number format: " + number;
+        return "MyDateTimeFormatter" + number;
     }
 }
