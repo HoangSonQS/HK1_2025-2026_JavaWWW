@@ -22,6 +22,5 @@ public class SpringPureJdbcxmlConfigApplication {
 
         EmployeeDAO employeeDAO = context.getBean("employeeDAOImpl", EmployeeDAOImpl.class);
 
-        List<Employee> employees =
     }
 }
