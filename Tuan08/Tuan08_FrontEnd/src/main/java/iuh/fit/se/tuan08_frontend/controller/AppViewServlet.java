@@ -27,8 +27,10 @@ public class AppViewServlet extends HttpServlet {
 
         switch (pathInfo) {
             case "/dienthoai":
-                jspPage = "DanhSachDienThoaiNCC";
-                break;
+                // Forward đến DienThoaiServlet để xử lý logic
+                RequestDispatcher dienThoaiDispatcher = request.getRequestDispatcher("/dienthoai");
+                dienThoaiDispatcher.forward(request, response);
+                return;
             case "/dienthoai/form":
                 jspPage = "DienThoaiForm";
                 break;
